@@ -1,0 +1,7 @@
+CREATE TABLE tarefas (
+    id BIGSERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    concluida BOOLEAN NOT NULL DEFAULT FALSE,
+    criada_em TIMESTAMP NOT NULL DEFAULT NOW()
+);
