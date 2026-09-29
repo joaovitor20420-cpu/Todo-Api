@@ -30,4 +30,14 @@ public class TaskService {
         }
         return taskRepository.save(task);
     }
+
+    public Task updateTask(Long id, Task newTask) throws Exception{
+        Task task = taskRepository
+                .findById(id).orElseThrow(() -> new Exception("Essa tarefa não existe"));
+        task.setName(newTask.getName());
+        task.setDescription(newTask.getDescription());
+        task.setCompleted(newTask.isCompleted());
+
+        return taskRepository.save(task);
+    }
 }
