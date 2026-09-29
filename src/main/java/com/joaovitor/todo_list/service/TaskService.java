@@ -40,4 +40,16 @@ public class TaskService {
 
         return taskRepository.save(task);
     }
+
+    public Task getTaskId(Long id) throws Exception{
+        Task task = taskRepository.findById(id).orElseThrow(() -> new Exception("Essa tarefa não existe"));
+
+                return task;
+    }
+
+    public void deleteTask(Long id) throws Exception{
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new Exception("Essa task não existi"));
+        taskRepository.delete(task);
+    }
 }
