@@ -52,4 +52,8 @@ public class TaskService {
                 .orElseThrow(() -> new Exception("Essa task não existi"));
         taskRepository.delete(task);
     }
+
+    public List<Task> findAll() {
+        return taskRepository.findAll();
+    }
 }
