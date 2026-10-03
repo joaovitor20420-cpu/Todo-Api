@@ -28,7 +28,7 @@ public class TaskController {
     public Task createTask(@RequestBody Task task) throws Exception{
         return taskService.createTask(task);
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task newTask) throws Exception{
         return taskService.updateTask(id, newTask);
     }
